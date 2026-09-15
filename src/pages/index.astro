@@ -1,0 +1,1025 @@
+---
+---
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Primary Meta Tags -->
+    <title>PeDitXCDN - Hack, Build, Reign</title>
+    <meta name="title" content="PeDitXCDN - Hack, Build, Reign">
+    <meta name="description" content="PeDitXCDN is an OpenWrt-based OS that simplifies router management.">
+    <meta name="keywords" content="PeDitXCDN, OpenWrt, custom firmware, router, LuCI, Passwall, Xray, V2ray, Store">
+    <meta name="author" content="PeDitXCDN">
+    <meta name="theme-color" content="#050505">
+
+    <!-- PWA / WebApp Manifest and Meta Tags -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PeDitXCDN">
+    <link rel="apple-touch-icon" href="/fav/apple-touch-icon.png">
+
+    <!-- Advanced SEO & Crawling -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://dns-gaming.ir/">
+
+    <!-- Open Graph / Facebook / Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dns-gaming.ir/">
+    <meta property="og:site_name" content="PeDitXCDN">
+    <meta property="og:title" content="PeDitXCDN - Hack, Build, Reign">
+    <meta property="og:description" content="PeDitXCDN is an OpenWrt-based OS that simplifies router management.">
+    <meta property="og:image" content="https://dns-gaming.ir/fav/apple-touch-icon.png">
+    <meta property="og:locale" content="fa_IR" id="meta-og-locale">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dns-gaming.ir/">
+    <meta property="twitter:title" content="PeDitXCDN - Hack, Build, Reign">
+    <meta property="twitter:description" content="PeDitXCDN is an OpenWrt-based OS that simplifies router management.">
+    <meta property="twitter:image" content="https://dns-gaming.ir/fav/apple-touch-icon.png">
+
+    <!-- Structured Data (JSON-LD) for Rich Snippets in Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PeDitXCDN",
+      "operatingSystem": "OpenWrt",
+      "applicationCategory": "UtilitiesApplication",
+      "description": "PeDitXCDN is an OpenWrt-based OS that simplifies router management with powerful tools like easy Passwall installation and a beautiful graphical interface.",
+      "url": "https://dns-gaming.ir/",
+      "author": {
+        "@type": "Organization",
+        "name": "PeDitXCDN Project"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <link rel="icon" href="/fav/favicon.ico" sizes="any">
+
+    <!-- Tailwind CSS -->
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Particles -->
+    <script is:inline src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <style is:global>
+        /* --- MODERN THEME VARIABLES --- */
+        :root {
+            --bg-deep: #050505;
+            --surface: #0f0f13;
+            --surface-lighter: #1a1a24;
+            --primary: #00f0ff;
+            --secondary: #7000ff;
+            --success: #00ff9d;
+            --danger: #ff0055;
+            --text-main: #ffffff;
+            --text-muted: #888899;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Vazirmatn', 'Outfit', sans-serif;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Background Mesh Gradient */
+        .ambient-light {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(112, 0, 255, 0.1), transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 240, 255, 0.1), transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* --- MODERN COMPONENTS --- */
+
+        /* Main App Container */
+        .app-shell {
+            background: rgba(15, 15, 19, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7);
+            border-radius: 32px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), #5200cc);
+            color: white;
+            font-weight: 700;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(112, 0, 255, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(112, 0, 255, 0.6);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Store Specific Button */
+        .btn-success-glass {
+            background: rgba(0, 255, 157, 0.05);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            color: var(--success);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .btn-success-glass:hover {
+            background: rgba(0, 255, 157, 0.15);
+            border-color: var(--success);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 255, 157, 0.3);
+        }
+
+        /* Repo Specific Button */
+        .btn-primary-glass {
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            color: var(--primary);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary-glass:hover {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: var(--surface-lighter);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 240, 255, 0.3);
+            background: rgba(26, 26, 36, 0.8);
+        }
+        .feature-card i {
+            background: -webkit-linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Modern Select */
+        .modern-select {
+            appearance: none;
+            background-color: var(--surface-lighter);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            outline: none;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+        .modern-select option { background: var(--surface-lighter); color: white; padding: 10px; }
+
+        /* Nav Links */
+        .nav-link {
+            position: relative;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-link:hover { color: white; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Animations */
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        .floating-logo { animation: float 6s ease-in-out infinite; }
+
+        /* Target Highlight Animations */
+        #tutorial-card:target {
+            animation: highlight-compile 1.5s ease-out;
+        }
+        #store-card:target {
+            animation: highlight-store 1.5s ease-out;
+        }
+        #repo-card:target {
+            animation: highlight-repo 1.5s ease-out;
+        }
+        @keyframes highlight-compile {
+            0% { border-color: var(--secondary); transform: translateY(-15px); box-shadow: 0 15px 40px rgba(112, 0, 255, 0.4); background: rgba(26, 26, 36, 0.9); }
+            100% { border-color: rgba(255,255,255,0.05); transform: translateY(0); box-shadow: none; background: var(--surface-lighter); }
+        }
+        @keyframes highlight-store {
+            0% { border-color: var(--success); transform: translateY(-15px); box-shadow: 0 15px 40px rgba(0, 255, 157, 0.4); background: rgba(26, 26, 36, 0.9); }
+            100% { border-color: rgba(255,255,255,0.05); transform: translateY(0); box-shadow: none; background: var(--surface-lighter); }
+        }
+        @keyframes highlight-repo {
+            0% { border-color: var(--primary); transform: translateY(-15px); box-shadow: 0 15px 40px rgba(0, 240, 255, 0.4); background: rgba(26, 26, 36, 0.9); }
+            100% { border-color: rgba(255,255,255,0.05); transform: translateY(0); box-shadow: none; background: var(--surface-lighter); }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* Tutorial Tabs */
+        .tutorial-tab { background: rgba(255,255,255,0.05); color: #9ca3af; }
+        .tutorial-tab.active-tab { background: var(--secondary); color: #fff; box-shadow: 0 0 20px rgba(112,0,255,0.4); }
+        .tutorial-tab:hover:not(.active-tab) { background: rgba(255,255,255,0.1); color: #fff; }
+
+        /* Pricing Tabs */
+        .pricing-tab { background: rgba(255,255,255,0.05); color: #9ca3af; }
+        .pricing-tab.active-tab { background: var(--primary); color: #fff; box-shadow: 0 0 20px rgba(0,240,255,0.4); }
+        .pricing-tab:hover:not(.active-tab) { background: rgba(255,255,255,0.1); color: #fff; }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            .app-shell { border-radius: 0; height: 100dvh; max-width: 100%; border: none; }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-0 lg:p-6">
+
+    <div class="ambient-light"></div>
+    <div id="particles-js" class="fixed inset-0 pointer-events-none z-0 opacity-30"></div>
+
+    <!-- MAIN APP SHELL -->
+    <div id="main-interface" class="app-shell w-full max-w-[1280px] h-full lg:h-[90vh] flex flex-col relative z-10">
+
+        <!-- HEADER -->
+        <header class="flex justify-between items-center p-5 border-b border-white/5 bg-white/[0.02] backdrop-blur-md sticky top-0 z-50">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-purple-500/20 floating-logo bg-black">
+                    <img src="/fav/apple-touch-icon.png" class="w-full h-full object-cover opacity-90" onerror="this.src='https://placehold.co/40x40/000000/FFFFFF?text=D'" alt="Logo">
+                </div>
+                <div class="leading-tight hidden sm:block">
+                    <h1 class="text-xl font-bold font-['Outfit'] tracking-wider text-white">PeDitX<span class="text-[var(--primary)]">CDN</span></h1>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#hero" class="nav-link">صفحه اصلی</a>
+                <a href="#features" class="nav-link">چرا CDN/DNS ما؟</a>
+                <a href="#install" class="nav-link">پنل کاربری</a>
+                <a href="#repo-card" class="nav-link">تعرفه‌ها</a>
+                <a href="#tutorial-card" class="nav-link">آموزش</a>
+                <a href="#store-card" class="nav-link">خرید اشتراک</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="https://t.me/peditx" class="text-[var(--primary)] text-2xl hover:scale-110 transition-transform">
+                    <i class="fab fa-telegram"></i>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- MOBILE MENU OVERLAY (Backdrop) -->
+        <div id="mobile-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+        <!-- MOBILE MENU SIDEBAR -->
+        <div id="mobile-menu" class="absolute top-0 bottom-0 right-0 w-[280px] max-w-[80vw] bg-[var(--surface-lighter)] border-l border-white/5 z-[70] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col shadow-2xl overflow-y-auto">
+
+            <!-- Sidebar Header -->
+            <div class="flex justify-between items-center p-6 border-b border-white/5">
+                <span class="text-xl font-bold font-['Outfit'] text-white tracking-wider">PeDitX<span class="text-[var(--primary)]">CDN</span></span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-white text-2xl transition-colors w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Sidebar Links -->
+            <div class="flex flex-col p-6 gap-2">
+                <a href="#hero" class="py-3 px-4 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all mobile-link">صفحه اصلی</a>
+                <a href="#features" class="py-3 px-4 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all mobile-link">چرا CDN/DNS ما؟</a>
+                <a href="#install" class="py-3 px-4 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all mobile-link">پنل کاربری</a>
+                <a href="#repo-card" class="py-3 px-4 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-all mobile-link">تعرفه‌ها</a>
+
+                <div class="h-px bg-white/5 my-2"></div>
+
+                <a href="#tutorial-card" class="py-3 px-4 rounded-xl text-base font-bold text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all mobile-link flex items-center gap-3">
+                    <i class="fas fa-cogs"></i> <span>آموزش</span>
+                </a>
+                <a href="#store-card" class="py-3 px-4 rounded-xl text-base font-bold text-[var(--success)] hover:bg-[var(--success)]/10 transition-all mobile-link flex items-center gap-3">
+                    <i class="fas fa-store"></i> <span>خرید اشتراک</span>
+                </a>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="mt-auto p-6 border-t border-white/5">
+                <p class="text-xs text-center text-gray-500 font-mono">PeDitXCDN</p>
+            </div>
+        </div>
+
+        <!-- SCROLLABLE CONTENT -->
+        <div class="flex-1 overflow-y-auto custom-scrollbar scroll-smooth">
+
+            <!-- HERO SECTION -->
+            <section id="hero" class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 relative">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--bg-deep)] opacity-80 pointer-events-none"></div>
+
+                <span class="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-[10px] tracking-[0.2em] font-bold text-[var(--primary)] mb-6 animate-pulse">NEXT GEN DNS</span>
+
+                <h1 class="text-5xl md:text-7xl font-black font-['Outfit'] mb-6 leading-tight">
+                    <span class="text-white">HACK.</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]">BUILD.</span> <span class="text-white">GAME.</span>
+                </h1>
+
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                    یک روش ساده برای رفع تحریم. برای تمام دستگاه‌ها PC / Console / Router / Modem / Mobile
+                </p>
+
+                <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 w-full sm:w-auto z-10">
+                    <a href="#install" class="btn-primary py-4 px-8 text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+                        <i class="fas fa-download"></i> <span>پنل کاربری</span>
+                    </a>
+                    <a href="#tutorial-card" class="btn-glass py-4 px-8 text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+                        <i class="fas fa-hammer"></i> <span>آموزش استفاده</span>
+                    </a>
+                    <a href="#store-card" class="btn-success-glass py-4 px-8 text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+                        <i class="fas fa-store"></i> <span>خرید و تمدید اشتراک</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- FEATURES GRID -->
+            <section id="features" class="py-20 px-6 md:px-12 bg-black/20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-2">چرا CDN/DNS ما؟</h2>
+                        <div class="h-1 w-20 bg-[var(--primary)] mx-auto rounded-full"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt text-4xl mb-4 block"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">رفع تحریم</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">دسترسی آزاد و بدون محدودیت به تمام سرویس‌ها و محتواهای اینترنتی.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-gamepad text-4xl mb-4 block"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">گیمینگ</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">پوشش دهی حداکثری بازی‌ها با پینگ پایین و سرعت بالا.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-robot text-4xl mb-4 block"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">نرم‌افزار و هوش مصنوعی</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">پوشش دهی حداکثری اپلیکیشن‌ها و سرویس‌ها با اتصال هوشمند.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-headset text-4xl mb-4 block"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">پشتیبانی ۲۴/۷</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">تیم پشتیبانی ما در تمام ساعات شبانه روز آماده کمک به شماست.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INSTALL SECTION -->
+            <section id="install" class="py-20 px-6">
+                <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
+                    <div class="flex flex-col items-center">
+                        <span class="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-[10px] tracking-[0.2em] font-bold text-[var(--secondary)] mb-6 animate-pulse">QUICK ACCESS</span>
+
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            ورود به پنل کاربری
+                        </h2>
+
+                        <p class="text-gray-400 text-lg max-w-2xl leading-relaxed">
+                            مدیریت اکانت، خرید اشتراک، مشاهده ترافیک مصرفی و دانلود مستقیم اپلیکیشن‌ها.
+                        </p>
+                    </div>
+
+                    <!-- Action Button -->
+                    <a href="https://docproir.peditxcdn.ir:8443" class="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-[var(--secondary)] to-purple-700 rounded-2xl text-white font-bold text-lg shadow-[0_0_30px_rgba(112,0,255,0.3)] hover:shadow-[0_0_50px_rgba(112,0,255,0.5)] transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out skew-x-12"></div>
+                        <i class="fas fa-external-link-alt text-xl group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>ورود به پنل کاربری</span>
+                    </a>
+
+                    <!-- Secure Note -->
+                    <div class="flex items-center gap-2 text-sm text-gray-500 mt-2">
+                        <i class="fas fa-shield-alt text-[var(--success)]"></i>
+                        <span>پرداخت مستقیم با کارت بانکی</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REPO, COMPILE & STORE CTA -->
+            <section id="repository-section" class="py-20 px-6 bg-gradient-to-t from-black/40 to-transparent">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Repo Card -->
+                    <div id="repo-card" class="bg-[var(--surface-lighter)] border border-white/5 rounded-2xl p-8 flex flex-col items-center text-center hover:border-[var(--primary)]/30 transition duration-300 group">
+                        <div class="w-16 h-16 rounded-full bg-[var(--primary)]/10 flex items-center justify-center text-[var(--primary)] text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">تعرفه‌های سرویس</h3>
+                        <p class="text-gray-400 text-sm mb-6 flex-1">مشاهده پلن‌های مختلف، قیمت‌ها و انتخاب بهترین سرویس متناسب با نیاز شما.</p>
+                        <button id="open-pricing-modal" class="btn-primary-glass py-2 px-6 text-sm font-bold shadow-lg flex items-center gap-2 cursor-pointer">
+                            <span>مشاهده تعرفه‌ها</span>
+                        </button>
+                    </div>
+
+                    <!-- Tutorial Card -->
+                    <div id="tutorial-card" class="bg-[var(--surface-lighter)] border border-white/5 rounded-2xl p-8 flex flex-col items-center text-center hover:border-[var(--secondary)]/30 transition duration-300 group">
+                        <div class="w-16 h-16 rounded-full bg-[var(--secondary)]/10 flex items-center justify-center text-[var(--secondary)] text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">آموزش استفاده</h3>
+                        <p class="text-gray-400 text-sm mb-6 flex-1">آموزش گام به گام اتصال و استفاده از PeDitXCDN روی تمام دستگاه‌ها.</p>
+                        <button id="open-tutorial-modal" class="btn-primary py-2 px-6 text-sm rounded-lg shadow-lg cursor-pointer">
+                            <span>مشاهده آموزش</span>
+                        </button>
+                    </div>
+
+                    <!-- Store Card -->
+                    <div id="store-card" class="bg-[var(--surface-lighter)] border border-white/5 rounded-2xl p-8 flex flex-col items-center text-center hover:border-[var(--success)]/30 transition duration-300 group">
+                        <div class="w-16 h-16 rounded-full bg-[var(--success)]/10 flex items-center justify-center text-[var(--success)] text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">خرید و تمدید اشتراک</h3>
+                        <p class="text-gray-400 text-sm mb-6 flex-1">برای خرید اشتراک جدید، تمدید اشتراک فعلی و مدیریت plan خود وارد پنل کاربری شوید.</p>
+                        <button id="open-payment-modal" class="btn-success-glass py-2 px-6 text-sm font-bold shadow-lg flex items-center gap-2 cursor-pointer">
+                            <span>خرید و تمدید اشتراک</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="py-8 text-center text-xs text-gray-500 border-t border-white/5">
+                <div class="flex justify-center gap-4 mb-4 text-lg">
+                    <a href="https://t.me/peditx" class="hover:text-[var(--primary)] transition"><i class="fab fa-telegram"></i></a>
+                    <a href="https://github.com/peditx" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+                </div>
+                <p>&copy; 2026 PeDitXCDN Project. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-[#1a1a24] border border-[var(--success)] text-[var(--success)] px-6 py-3 rounded-lg shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-[100] flex items-center gap-2 font-bold text-sm">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Copied!</span>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="payment-modal-overlay"></div>
+        <div class="relative bg-[var(--surface)] border border-white/10 rounded-2xl p-8 max-w-md w-full shadow-2xl transform scale-95 transition-transform duration-300" id="payment-modal-content">
+            <button id="close-payment-modal" class="absolute top-4 left-4 text-gray-400 hover:text-white transition text-xl cursor-pointer">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 rounded-full bg-[var(--success)]/10 flex items-center justify-center text-[var(--success)] text-2xl mx-auto mb-4">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">خرید و تمدید اشتراک</h3>
+                <p class="text-gray-400 text-sm">پس از انتخاب پلن مورد نظر خود، اقدام به پرداخت مبلغ مشخص‌شده کنید.</p>
+            </div>
+            <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5 mb-4">
+                <p class="text-gray-400 text-xs mb-3">شماره کارت بانکی:</p>
+                <div class="flex items-center justify-between gap-2 bg-black/30 rounded-lg px-4 py-3 border border-white/5">
+                    <code class="text-[var(--primary)] text-lg tracking-wider font-mono" id="card-number" dir="ltr" style="direction:ltr;unicode-bidi:embed">6219 8619 0452 7289</code>
+                    <button class="text-gray-400 hover:text-[var(--success)] transition text-sm cursor-pointer" onclick="navigator.clipboard.writeText('6219861904527289'); document.getElementById('toast-message').textContent = 'شماره کارت کپی شد!'; const t=document.getElementById('toast-notification'); t.classList.remove('translate-y-20','opacity-0'); t.classList.add('translate-y-0','opacity-100'); setTimeout(()=>{t.classList.add('translate-y-20','opacity-0');t.classList.remove('translate-y-0','opacity-100')},2000)">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <p class="text-gray-400 text-xs mt-3">به نام:</p>
+                <p class="text-white font-bold text-sm mt-1">پدرام ال محمود</p>
+            </div>
+            <div class="bg-[var(--success)]/5 border border-[var(--success)]/20 rounded-xl p-4 mb-4">
+                <p class="text-gray-300 text-xs leading-relaxed">
+                    <i class="fas fa-info-circle text-[var(--success)] ml-1"></i>
+                    پس از پرداخت، وارد <a href="https://docproir.peditxcdn.ir:8443" class="text-[var(--success)] font-bold hover:underline">پنل کاربری</a> شوید و اسکرین‌شات پرداخت را ارسال نمایید. در اسرع وقت حساب شما شارژ خواهد شد.
+                </p>
+            </div>
+            <a href="https://docproir.peditxcdn.ir:8443" class="btn-success-glass py-3 px-6 text-sm font-bold shadow-lg flex items-center justify-center gap-2 w-full">
+                <i class="fas fa-external-link-alt"></i>
+                <span>ورود به پنل کاربری</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Tutorial Modal -->
+    <div id="tutorial-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="tutorial-modal-overlay"></div>
+        <div class="relative bg-[var(--surface)] border border-white/10 rounded-2xl p-6 max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300" id="tutorial-modal-content">
+            <button id="close-tutorial-modal" class="absolute top-4 left-4 text-gray-400 hover:text-white transition text-xl cursor-pointer z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-5">
+                <div class="w-16 h-16 rounded-full bg-[var(--secondary)]/10 flex items-center justify-center text-[var(--secondary)] text-2xl mx-auto mb-4">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">آموزش اتصال DNS</h3>
+                <p class="text-gray-400 text-xs">انتخاب دستگاه خود و دنبال کردن مراحل</p>
+            </div>
+
+            <!-- Device Tabs -->
+            <div class="flex flex-wrap gap-2 justify-center mb-5">
+                <button class="tutorial-tab active-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="android"><i class="fab fa-android ml-1"></i> Android</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="ios"><i class="fab fa-apple ml-1"></i> iOS</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="pc"><i class="fas fa-desktop ml-1"></i> PC</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="mac"><i class="fab fa-apple ml-1"></i> Mac</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="ps4"><i class="fas fa-gamepad ml-1"></i> PS4</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="ps5"><i class="fas fa-gamepad ml-1"></i> PS5</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="xbox"><i class="fab fa-xbox ml-1"></i> Xbox</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="openwrt"><i class="fas fa-network-wired ml-1"></i> OpenWrt</button>
+                <button class="tutorial-tab text-xs font-bold px-3 py-2 rounded-lg transition cursor-pointer" data-device="modem"><i class="fas fa-router ml-1"></i> مودم</button>
+            </div>
+
+            <!-- Important Note -->
+            <div class="bg-[var(--secondary)]/5 border border-[var(--secondary)]/20 rounded-xl p-4 mb-4">
+                <p class="text-gray-300 text-xs leading-relaxed">
+                    <i class="fas fa-info-circle text-[var(--secondary)] ml-1"></i>
+                    <b class="text-white">ثبت IP:</b> آدرس IP شما باید از طریق <a href="https://docproir.peditxcdn.ir:8443" class="text-[var(--secondary)] font-bold hover:underline">پنل کاربری</a> ثبت شود. این کار به صورت <b class="text-white">دستی</b> (با ثبت IP از داخل پنل) یا به صورت <b class="text-white">خودکار</b> (با اولین اتصال از طریق دستگاه) انجام می‌شود.
+                </p>
+                <p class="text-gray-300 text-xs leading-relaxed mt-2">
+                    <i class="fas fa-info-circle text-[var(--secondary)] ml-1"></i>
+                    <b class="text-white">تنظیم DNS:</b> آدرس IP که پنل به شما می‌دهد را یادداشت کنید. <b class="text-white">این را در تنظیمات شبکهٔ کنسول، گوشی یا مودم به‌عنوان DNS اول بگذارید.</b> اگر DNS دوم هم می‌خواهید، همین آدرس را دوباره بنویسید — آدرس دیگری آنجا باعث می‌شود سرویس گاهی کار کند و گاهی نه.
+                </p>
+            </div>
+
+            <!-- Device Tutorials -->
+            <!-- Android -->
+            <div class="tutorial-content" data-device="android">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fab fa-android text-[var(--success)] ml-1"></i> اتصال DNS روی Android</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد <b class="text-white">تنظیمات (Settings)</b> شوید.</li>
+                        <li>روی <b class="text-white">شبکه و اینترنت (Network & Internet)</b> بزنید.</li>
+                        <li>روی <b class="text-white">DNS خصوصی (Private DNS)</b> بزنید.</li>
+                        <li>گزینه <b class="text-white">نام ارائه‌دهنده DNS خصوصی</b> را انتخاب کنید.</li>
+                        <li>آدرس IP که از پنل دریافت کرده‌اید را وارد کنید.</li>
+                        <li><b class="text-[var(--success)]">ذخیره</b> کنید. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- iOS -->
+            <div class="tutorial-content hidden" data-device="ios">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fab fa-apple text-gray-300 ml-1"></i> اتصال DNS روی iOS</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد <b class="text-white">تنظیمات (Settings)</b> شوید.</li>
+                        <li>روی <b class="text-white">Wi-Fi</b> بزنید و روی شبکه فعلی <i class="fas fa-info-circle text-gray-500"></i> بزنید.</li>
+                        <li>تا پایین اسکرول کنید و روی <b class="text-white">پیکربندی DNS (Configure DNS)</b> بزنید.</li>
+                        <li>حالت را از خودکار به <b class="text-white">دستی (Manual)</b> تغییر دهید.</li>
+                        <li>سرورهای موجود را حذف کنید و آدرس IP پنل را اضافه کنید.</li>
+                        <li>روی <b class="text-[var(--success)]">ذخیره (Save)</b> بزنید. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- PC -->
+            <div class="tutorial-content hidden" data-device="pc">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fas fa-desktop text-[var(--primary)] ml-1"></i> اتصال DNS روی PC (ویندوز)</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد <b class="text-white">Control Panel > Network and Sharing Center</b> شوید.</li>
+                        <li>روی <b class="text-white">Change adapter settings</b> بزنید.</li>
+                        <li>روی اتصال شبکه فعال راست‌کلیک کنید و <b class="text-white">Properties</b> را بزنید.</li>
+                        <li><b class="text-white">Internet Protocol Version 4 (TCP/IPv4)</b> را انتخاب و روی Properties بزنید.</li>
+                        <li>گزینه <b class="text-white">Use the following DNS server addresses</b> را بزنید.</li>
+                        <li>آدرس IP پنل را در <b class="text-white">Preferred DNS server</b> وارد کنید.</li>
+                        <li><b class="text-[var(--success)]">OK</b> بزنید. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- PS4 -->
+            <div class="tutorial-content hidden" data-device="ps4">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fas fa-gamepad text-[var(--primary)] ml-1"></i> اتصال DNS روی PS4</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد <b class="text-white">Settings > Network</b> شوید.</li>
+                        <li>روی <b class="text-white">Set Up Internet Connection</b> بزنید.</li>
+                        <li>نوع اتصال (Wi-Fi یا LAN) را انتخاب کنید.</li>
+                        <li>در مرحله تنظیمات، <b class="text-white">Custom</b> را بزنید.</li>
+                        <li>در بخش DNS Settings، گزینه <b class="text-white">Manual</b> را انتخاب کنید.</li>
+                        <li>آدرس IP پنل را در <b class="text-white">Primary DNS</b> وارد کنید.</li>
+                        <li>همین آدرس را در <b class="text-white">Secondary DNS</b> هم وارد کنید.</li>
+                        <li>بقیه مراحل را با تنظیمات پیش‌فرض ادامه دهید و <b class="text-[var(--success)]">Test Connection</b> بزنید. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- PS5 -->
+            <div class="tutorial-content hidden" data-device="ps5">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fas fa-gamepad text-[var(--primary)] ml-1"></i> اتصال DNS روی PS5</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد <b class="text-white">Settings > Network</b> شوید.</li>
+                        <li>روی <b class="text-white">Settings > Set Up Internet Connection</b> بزنید.</li>
+                        <li>روی شبکه فعلی خود <b class="text-white">Options</b> بزنید و <b class="text-white">Advanced Settings</b> را انتخاب کنید.</li>
+                        <li>در بخش <b class="text-white">DNS Settings</b> گزینه <b class="text-white">Manual</b> را بزنید.</li>
+                        <li>آدرس IP پنل را در <b class="text-white">Primary DNS</b> وارد کنید.</li>
+                        <li>همین آدرس را در <b class="text-white">Secondary DNS</b> هم وارد کنید.</li>
+                        <li><b class="text-[var(--success)]">OK</b> بزنید و تست اتصال انجام دهید. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Xbox -->
+            <div class="tutorial-content hidden" data-device="xbox">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fab fa-xbox text-[var(--success)] ml-1"></i> اتصال DNS روی Xbox</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد <b class="text-white">Settings > General > Network Settings</b> شوید.</li>
+                        <li>روی <b class="text-white">Advanced Settings</b> بزنید.</li>
+                        <li>روی <b class="text-white">DNS Settings</b> بزنید.</li>
+                        <li>گزینه <b class="text-white">Manual</b> را انتخاب کنید.</li>
+                        <li>آدرس IP پنل را در <b class="text-white">Primary DNS</b> وارد کنید.</li>
+                        <li>همین آدرس را در <b class="text-white">Secondary DNS</b> هم وارد کنید.</li>
+                        <li><b class="text-[var(--success)]">Test</b> بزنید تا اتصال بررسی شود. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- OpenWrt -->
+            <div class="tutorial-content hidden" data-device="openwrt">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fas fa-network-wired text-[var(--secondary)] ml-1"></i> اتصال DNS روی OpenWrt</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد پنل مدیریت مودم شوید (معمولاً <code class="bg-black/30 px-1 rounded text-[var(--primary)]">192.168.1.1</code>).</li>
+                        <li>از منوی <b class="text-white">Network > DHCP and DNS</b> را باز کنید.</li>
+                        <li>در بخش <b class="text-white">DNS Forwardings</b> آدرس IP پنل را وارد کنید.</li>
+                        <li>در بخش <b class="text-white">General Settings</b> مطمئن شوید DNS به سرور دلخواه اشاره می‌کند.</li>
+                        <li>تغییرات را <b class="text-[var(--success)]">ذخیره و اعمال</b> کنید.</li>
+                        <li>با دستور <code class="bg-black/30 px-1 rounded text-[var(--primary)]">/etc/init.d/dnsmasq restart</code> سرویس DNS را ریستارت کنید. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Mac -->
+            <div class="tutorial-content hidden" data-device="mac">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fab fa-apple text-gray-300 ml-1"></i> اتصال DNS روی macOS</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>وارد <b class="text-white">System Settings > Network</b> شوید.</li>
+                        <li>اتصال فعال (Wi-Fi یا Ethernet) را انتخاب کنید و روی <b class="text-white">Details</b> بزنید.</li>
+                        <li>از منوی سمت راست روی <b class="text-white">DNS</b> بزنید.</li>
+                        <li>روی <b class="text-white">+</b> بزنید و آدرس IP پنل را اضافه کنید.</li>
+                        <li>سرورهای DNS قبلی را حذف کنید.</li>
+                        <li>روی <b class="text-[var(--success)]">OK</b> و سپس <b class="text-[var(--success)]">Apply</b> بزنید. تمام!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Modem -->
+            <div class="tutorial-content hidden" data-device="modem">
+                <div class="bg-[var(--surface-lighter)] border border-white/5 rounded-xl p-5">
+                    <h4 class="text-white font-bold text-sm mb-3"><i class="fas fa-router text-[var(--primary)] ml-1"></i> اتصال DNS روی مودم</h4>
+                    <ol class="text-gray-300 text-xs leading-loose list-decimal pr-4 space-y-2">
+                        <li>آدرس IP مودم خود را در مرورگر وارد کنید (معمولاً <code class="bg-black/30 px-1 rounded text-[var(--primary)]">192.168.1.1</code> یا <code class="bg-black/30 px-1 rounded text-[var(--primary)]">192.168.8.1</code>).</li>
+                        <li>با نام کاربری و رمز عبور وارد پنل مدیریت مودم شوید.</li>
+                        <li>از منوی <b class="text-white">Network Settings > WAN</b> یا <b class="text-white">DHCP Settings</b> را باز کنید.</li>
+                        <li>بخش <b class="text-white">DNS Server</b> را پیدا کنید.</li>
+                        <li>حالت را از خودکار به <b class="text-white">دستی (Manual)</b> تغییر دهید.</li>
+                        <li>آدرس IP پنل را در <b class="text-white">Primary DNS</b> وارد کنید.</li>
+                        <li>همین آدرس را در <b class="text-white">Secondary DNS</b> هم وارد کنید.</li>
+                        <li>تغییرات را <b class="text-[var(--success)]">ذخیره</b> کنید و مودم را <b class="text-white">ریستارت</b> نمایید. تمام!</li>
+                    </ol>
+                    <p class="text-gray-500 text-xs mt-3"><i class="fas fa-info-circle ml-1"></i> تنظیمات بسته به مدل مودم ممکن است کمی متفاوت باشد.</p>
+                </div>
+            </div>
+
+            <button id="close-tutorial-modal-btn" class="mt-5 w-full py-3 px-6 text-sm font-bold rounded-xl bg-[var(--secondary)]/10 border border-[var(--secondary)]/30 text-[var(--secondary)] hover:bg-[var(--secondary)]/20 transition cursor-pointer">
+                <i class="fas fa-times ml-1"></i> بستن
+            </button>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <div id="pricing-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="pricing-modal-overlay"></div>
+        <div class="relative bg-[var(--surface)] border border-white/10 rounded-2xl p-6 max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300" id="pricing-modal-content">
+            <button id="close-pricing-modal" class="absolute top-4 left-4 text-gray-400 hover:text-white transition text-xl cursor-pointer z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-5">
+                <div class="w-16 h-16 rounded-full bg-[var(--primary)]/10 flex items-center justify-center text-[var(--primary)] text-2xl mx-auto mb-4">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">تعرفه‌های سرویس</h3>
+                <p class="text-gray-400 text-xs">پلن مورد نظر خود را انتخاب کنید</p>
+            </div>
+
+            <!-- Plan Tabs -->
+            <div class="flex gap-2 justify-center mb-5">
+                <button class="pricing-tab active-tab text-xs font-bold px-4 py-2 rounded-lg transition cursor-pointer" data-plan="bronze">برنزی</button>
+                <button class="pricing-tab text-xs font-bold px-4 py-2 rounded-lg transition cursor-pointer" data-plan="gold">گلد</button>
+                <button class="pricing-tab text-xs font-bold px-4 py-2 rounded-lg transition cursor-pointer" data-plan="platinum">پلاتینیوم</button>
+                <button class="pricing-tab text-xs font-bold px-4 py-2 rounded-lg transition cursor-pointer" data-plan="master">مستر</button>
+            </div>
+
+            <!-- Bronze Plan -->
+            <div class="pricing-content" data-plan="bronze">
+                <div class="bg-[var(--surface-lighter)] border border-[var(--primary)]/20 rounded-xl p-6">
+                    <div class="text-center mb-4">
+                        <span class="inline-block px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-bold mb-2">برنزی</span>
+                        <div class="text-3xl font-bold text-white">۴۰۰,۰۰۰ <span class="text-sm text-gray-400 font-normal">تومان</span></div>
+                        <div class="text-gray-400 text-xs mt-1">ماهانه</div>
+                    </div>
+                    <ul class="text-gray-300 text-xs space-y-3 mb-5">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[var(--primary)] text-[10px]"></i> ۲۰ گیگابایت ترافیک ماهانه</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[var(--primary)] text-[10px]"></i> رفع تحریم کامل</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-[var(--primary)] text-[10px]"></i> اتصال نامحدود در ۱ شبکه</li>
+                    </ul>
+                    <button class="btn-buy-plan w-full py-3 px-6 text-sm font-bold rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/30 text-[var(--primary)] hover:bg-[var(--primary)]/20 transition cursor-pointer">
+                        <i class="fas fa-shopping-cart ml-1"></i> خرید این پلن
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gold Plan -->
+            <div class="pricing-content hidden" data-plan="gold">
+                <div class="bg-[var(--surface-lighter)] border border-yellow-500/20 rounded-xl p-6 relative overflow-hidden">
+                    <div class="absolute top-3 left-3 bg-yellow-500/20 text-yellow-300 text-[10px] font-bold px-2 py-0.5 rounded-full">ویژه</div>
+                    <div class="text-center mb-4">
+                        <span class="inline-block px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-bold mb-2">گلد</span>
+                        <div class="text-3xl font-bold text-white">۶۵۰,۰۰۰ <span class="text-sm text-gray-400 font-normal">تومان</span></div>
+                        <div class="text-gray-400 text-xs mt-1">ماهانه</div>
+                    </div>
+                    <ul class="text-gray-300 text-xs space-y-3 mb-5">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-[10px]"></i> ۵۰ گیگابایت ترافیک ماهانه</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-[10px]"></i> رفع تحریم کامل</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-400 text-[10px]"></i> اتصال نامحدود در ۱ شبکه</li>
+                    </ul>
+                    <button class="btn-buy-plan w-full py-3 px-6 text-sm font-bold rounded-xl bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/20 transition cursor-pointer">
+                        <i class="fas fa-shopping-cart ml-1"></i> خرید این پلن
+                    </button>
+                </div>
+            </div>
+
+            <!-- Platinum Plan -->
+            <div class="pricing-content hidden" data-plan="platinum">
+                <div class="bg-[var(--surface-lighter)] border border-gray-300/20 rounded-xl p-6">
+                    <div class="text-center mb-4">
+                        <span class="inline-block px-3 py-1 rounded-full bg-gray-300/10 text-gray-300 text-xs font-bold mb-2">پلاتینیوم</span>
+                        <div class="text-3xl font-bold text-white">۱,۰۰۰,۰۰۰ <span class="text-sm text-gray-400 font-normal">تومان</span></div>
+                        <div class="text-gray-400 text-xs mt-1">ماهانه</div>
+                    </div>
+                    <ul class="text-gray-300 text-xs space-y-3 mb-5">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-gray-300 text-[10px]"></i> ۱۰۰ گیگابایت ترافیک ماهانه</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-gray-300 text-[10px]"></i> رفع تحریم کامل</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-gray-300 text-[10px]"></i> اتصال نامحدود در ۱ شبکه</li>
+                    </ul>
+                    <button class="btn-buy-plan w-full py-3 px-6 text-sm font-bold rounded-xl bg-gray-300/10 border border-gray-300/30 text-gray-300 hover:bg-gray-300/20 transition cursor-pointer">
+                        <i class="fas fa-shopping-cart ml-1"></i> خرید این پلن
+                    </button>
+                </div>
+            </div>
+
+            <!-- Master Plan -->
+            <div class="pricing-content hidden" data-plan="master">
+                <div class="bg-[var(--surface-lighter)] border border-purple-500/20 rounded-xl p-6 relative overflow-hidden">
+                    <div class="absolute top-3 left-3 bg-purple-500/20 text-purple-300 text-[10px] font-bold px-2 py-0.5 rounded-full">ویژه</div>
+                    <div class="text-center mb-4">
+                        <span class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold mb-2">مستر</span>
+                        <div class="text-3xl font-bold text-white">۲,۴۰۰,۰۰۰ <span class="text-sm text-gray-400 font-normal">تومان</span></div>
+                        <div class="text-gray-400 text-xs mt-1">۳ ماهه</div>
+                    </div>
+                    <ul class="text-gray-300 text-xs space-y-3 mb-5">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> ترافیک <b class="text-white">نامحدود</b></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> رفع تحریم کامل</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> اتصال نامحدود در ۱ شبکه</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> اولویت اتصال</li>
+                    </ul>
+                    <button class="btn-buy-plan w-full py-3 px-6 text-sm font-bold rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition cursor-pointer">
+                        <i class="fas fa-shopping-cart ml-1"></i> خرید این پلن
+                    </button>
+                </div>
+            </div>
+
+            <button id="close-pricing-modal-btn" class="mt-5 w-full py-3 px-6 text-sm font-bold rounded-xl bg-[var(--primary)]/10 border border-[var(--primary)]/30 text-[var(--primary)] hover:bg-[var(--primary)]/20 transition cursor-pointer">
+                <i class="fas fa-times ml-1"></i> بستن
+            </button>
+        </div>
+    </div>
+
+    <script is:inline>
+        // Main Application Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            // Init Particles if available
+            if(typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', { "particles": { "number": { "value": 30 }, "color": { "value": "#4c1d95" }, "line_linked": { "color": "#4c1d95", "opacity": 0.2 } } });
+            }
+        });
+
+        // --- Mobile Menu ---
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            if (!mobileMenu) return;
+            const isHidden = mobileMenu.classList.contains('translate-x-full');
+            if(isHidden) {
+                mobileMenu.classList.remove('translate-x-full');
+                if(mobileOverlay) {
+                    mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                    mobileOverlay.classList.add('opacity-100', 'pointer-events-auto');
+                }
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                if(mobileOverlay) {
+                    mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    mobileOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+            }
+        }
+
+        if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+        if(mobileOverlay) mobileOverlay.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(l => l.addEventListener('click', toggleMenu));
+
+        // Payment Modal
+        const openPaymentBtn = document.getElementById('open-payment-modal');
+        const closePaymentBtn = document.getElementById('close-payment-modal');
+        const paymentOverlay = document.getElementById('payment-modal-overlay');
+        const paymentModal = document.getElementById('payment-modal');
+        const paymentContent = document.getElementById('payment-modal-content');
+
+        function openPaymentModal() {
+            paymentModal.classList.remove('opacity-0', 'pointer-events-none');
+            paymentModal.classList.add('opacity-100', 'pointer-events-auto');
+            paymentContent.classList.remove('scale-95');
+            paymentContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePaymentModal() {
+            paymentModal.classList.add('opacity-0', 'pointer-events-none');
+            paymentModal.classList.remove('opacity-100', 'pointer-events-auto');
+            paymentContent.classList.add('scale-95');
+            paymentContent.classList.remove('scale-100');
+            document.body.style.overflow = '';
+        }
+
+        if(openPaymentBtn) openPaymentBtn.addEventListener('click', openPaymentModal);
+        if(closePaymentBtn) closePaymentBtn.addEventListener('click', closePaymentModal);
+        if(paymentOverlay) paymentOverlay.addEventListener('click', closePaymentModal);
+
+        // Tutorial Modal
+        const openTutorialBtn = document.getElementById('open-tutorial-modal');
+        const closeTutorialBtn = document.getElementById('close-tutorial-modal');
+        const closeTutorialBtn2 = document.getElementById('close-tutorial-modal-btn');
+        const tutorialOverlay = document.getElementById('tutorial-modal-overlay');
+        const tutorialModal = document.getElementById('tutorial-modal');
+        const tutorialContent = document.getElementById('tutorial-modal-content');
+        const tutorialTabs = document.querySelectorAll('.tutorial-tab');
+        const tutorialContents = document.querySelectorAll('.tutorial-content');
+
+        function openTutorialModal() {
+            tutorialModal.classList.remove('opacity-0', 'pointer-events-none');
+            tutorialModal.classList.add('opacity-100', 'pointer-events-auto');
+            tutorialContent.classList.remove('scale-95');
+            tutorialContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTutorialModal() {
+            tutorialModal.classList.add('opacity-0', 'pointer-events-none');
+            tutorialModal.classList.remove('opacity-100', 'pointer-events-auto');
+            tutorialContent.classList.add('scale-95');
+            tutorialContent.classList.remove('scale-100');
+            document.body.style.overflow = '';
+        }
+
+        if(openTutorialBtn) openTutorialBtn.addEventListener('click', openTutorialModal);
+        if(closeTutorialBtn) closeTutorialBtn.addEventListener('click', closeTutorialModal);
+        if(closeTutorialBtn2) closeTutorialBtn2.addEventListener('click', closeTutorialModal);
+        if(tutorialOverlay) tutorialOverlay.addEventListener('click', closeTutorialModal);
+
+        // Tutorial Tab Switching
+        tutorialTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const device = tab.getAttribute('data-device');
+                tutorialTabs.forEach(t => { t.classList.remove('active-tab', 'bg-[var(--secondary)]', 'text-white'); t.classList.add('bg-white/5', 'text-gray-400'); });
+                tab.classList.add('active-tab', 'bg-[var(--secondary)]', 'text-white');
+                tab.classList.remove('bg-white/5', 'text-gray-400');
+                tutorialContents.forEach(c => { c.classList.add('hidden'); if(c.getAttribute('data-device') === device) c.classList.remove('hidden'); });
+            });
+        });
+
+        // Pricing Modal
+        const openPricingBtn = document.getElementById('open-pricing-modal');
+        const closePricingBtn = document.getElementById('close-pricing-modal');
+        const closePricingBtn2 = document.getElementById('close-pricing-modal-btn');
+        const pricingOverlay = document.getElementById('pricing-modal-overlay');
+        const pricingModal = document.getElementById('pricing-modal');
+        const pricingContent = document.getElementById('pricing-modal-content');
+        const pricingTabs = document.querySelectorAll('.pricing-tab');
+        const pricingContents = document.querySelectorAll('.pricing-content');
+
+        function openPricingModal() {
+            pricingModal.classList.remove('opacity-0', 'pointer-events-none');
+            pricingModal.classList.add('opacity-100', 'pointer-events-auto');
+            pricingContent.classList.remove('scale-95');
+            pricingContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePricingModal() {
+            pricingModal.classList.add('opacity-0', 'pointer-events-none');
+            pricingModal.classList.remove('opacity-100', 'pointer-events-auto');
+            pricingContent.classList.add('scale-95');
+            pricingContent.classList.remove('scale-100');
+            document.body.style.overflow = '';
+        }
+
+        if(openPricingBtn) openPricingBtn.addEventListener('click', openPricingModal);
+        if(closePricingBtn) closePricingBtn.addEventListener('click', closePricingModal);
+        if(closePricingBtn2) closePricingBtn2.addEventListener('click', closePricingModal);
+        if(pricingOverlay) pricingOverlay.addEventListener('click', closePricingModal);
+
+        // Pricing Tab Switching
+        pricingTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const plan = tab.getAttribute('data-plan');
+                pricingTabs.forEach(t => { t.classList.remove('active-tab', 'bg-[var(--primary)]', 'text-white'); t.classList.add('bg-white/5', 'text-gray-400'); });
+                tab.classList.add('active-tab', 'bg-[var(--primary)]', 'text-white');
+                tab.classList.remove('bg-white/5', 'text-gray-400');
+                pricingContents.forEach(c => { c.classList.add('hidden'); if(c.getAttribute('data-plan') === plan) c.classList.remove('hidden'); });
+            });
+        });
+
+        // Buy Plan buttons → open payment modal, close pricing modal
+        document.querySelectorAll('.btn-buy-plan').forEach(btn => {
+            btn.addEventListener('click', () => {
+                closePricingModal();
+                setTimeout(openPaymentModal, 300);
+            });
+        });
+    </script>
+</body>
+</html>

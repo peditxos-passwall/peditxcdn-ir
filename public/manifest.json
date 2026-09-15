@@ -1,0 +1,17 @@
+{
+  "name": "DNS Gaming",
+  "short_name": "DNS Gaming",
+  "description": "DNS Gaming - OpenWrt Firmware & Router Management",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/fav/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
